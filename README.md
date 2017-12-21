@@ -11,4 +11,5 @@ Akhand Dugar , Made it bearable to the eyes
 
 Alexander Vilablance , added the classroom api
 
-Christopher W. Harjadi , fed Andrew Runke 
+Christopher W. Harjadi , made README.md
+
