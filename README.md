@@ -3,8 +3,13 @@ It was written by a team of MVHS students, who worked hard to bring you the Home
 
 Made by:
 
-John H. Park
-Andrew Runke
-Akhand Dugar
-Alexander Vilablance 
-Christopher W. Harjadi
+John H. Park: Team Lead
+
+Andrew Runke: Used to Classroom Api to grab classworks to display
+
+Akhand Dugar: Displayed the classworks in a beautiful fashion
+
+Alexander Vilablance: Set up the Classroom Api
+
+Christopher W. Harjadi: Currently working on custom assignments
+
