@@ -3,8 +3,13 @@ It was written by a team of MVHS students, who worked hard to bring you the Home
 
 Made by:
 
-John H. Park
-Andrew Runke
-Akhand Dugar
-Alexander Vilablance 
-Christopher W. Harjadi
+John H. Park, Team Lead
+
+Andrew Runke, Used Google Classroom Api to add function
+
+Akhand Dugar , Made it bearable to the eyes
+
+Alexander Vilablance , added the classroom api
+
+Christopher W. Harjadi , made README.md
+
