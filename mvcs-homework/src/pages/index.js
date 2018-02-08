@@ -1,8 +1,34 @@
 import React from 'react';
-
 import GoogleLogin from 'react-google-login';
 
 import Cookies from 'universal-cookie';
+import React, { Component } from 'react';
+import './style.css';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { amber, blue, red } from 'material-ui/colors';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import Tabs, { Tab } from 'material-ui/Tabs';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Paper from 'material-ui/Paper';
+import Avatar from 'material-ui/Avatar';
+import DateRangeIcon from 'material-ui-icons/DateRange';
+import AssignmentIcon from 'material-ui-icons/Assignment';
+import NoteIcon from 'material-ui-icons/Note';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: amber,
+    secondary: blue
+  },
+  root: {
+    flexGrow: 1,
+  },
+
+});
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
@@ -37,10 +63,8 @@ const responseGoogle = (response) => {
   //console.log(response.profileObj.name);
 
   //alert("ATTEMPTING TO MOVE YOU");
-
-  cookies.set('name', response.profileObj.name, { path: '/'});
-
-  cookies.set('key', response.accessToken, {path: '/'});
+  cookies.set('name', response.profileObj.name, { path: '/' });
+  cookies.set('key', response.accessToken, { path: '/' });
 
   //alert(cookies.get('name'));
 
@@ -83,35 +107,27 @@ const theme = createMuiTheme ({
 
 
 const IndexPage = () =>
-
-<div>
-
-  <div id='info'>
-
-    <img id='img' src="https://lh3.googleusercontent.com/mIrjY5VWssd3-L8mVC0ALxDeUEhO0wzy88cgB0PQb3f9LI4DAPgObnAQ72rl9rvFcwgI=w300" alt="DUCKLINGS"/>
-    <div id='login'>
-
-          <GoogleLogin
-
-            clientId="290518323911-f5ph5ghp1qr230r90f79p7sg2n5o0vn9.apps.googleusercontent.com"
-
-            scope="https://www.googleapis.com/auth/classroom.courses https://www.googleapis.com/auth/classroom.coursework.me"
-
-            response_type="token"
-
-            prompt="select_account"
-
-            buttonText="Login"
-
-            onSuccess={responseGoogle}
-
-            onFailure={failureResponse}
-
-        />
-
-        </div>
-
-  </div>
+  <MuiThemeProvider theme={theme}>
+    <div>
+      <AppBar position="static" id='title'>
+        <Toolbar>
+          <Typography type="title" color='inherit'>
+            MVHS Homework App
+            </Typography>
+            <GoogleLogin
+              clientId="290518323911-f5ph5ghp1qr230r90f79p7sg2n5o0vn9.apps.googleusercontent.com"
+              scope="https://www.googleapis.com/auth/classroom.courses https://www.googleapis.com/auth/classroom.coursework.me"
+              response_type="token"
+              prompt="select_account"
+              buttonText="Login"
+              class="google"
+              onSuccess={responseGoogle}
+              onFailure={failureResponse} 
+            />
+        </Toolbar>
+      </AppBar>
+    </div>
+  </MuiThemeProvider>
 
 </div>
 
