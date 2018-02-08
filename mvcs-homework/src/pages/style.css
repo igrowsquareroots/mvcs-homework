@@ -25,4 +25,9 @@ button {
 }
 h2 {
     white-space: nowrap;
+  width: auto;
+}
+
+#title {
+  position: static;
 }

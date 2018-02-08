@@ -1,0 +1,12 @@
+body {
+      font-family: Roboto;
+  }
+  
+  #title {
+      padding: 2em;
+  }
+
+  #avatar {
+    margin-left: auto;
+    margin-top: 2px;
+    }

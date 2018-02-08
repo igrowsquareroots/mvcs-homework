@@ -19,7 +19,7 @@ import DateRangeIcon from 'material-ui-icons/DateRange';
 import AssignmentIcon from 'material-ui-icons/Assignment';
 import NoteIcon from 'material-ui-icons/Note';
 
-const cookies = new Cookies();
+
 
 const theme = createMuiTheme({
   palette: {
@@ -35,11 +35,13 @@ const theme = createMuiTheme({
 var name = (cookies.get('name'));
 var key = (cookies.get('key'));
 console.log(key);
+=======
+//Logic code
 
-class Homework {
-  async loadTest() {
-    try {
-      const response = await fetch('https://classroom.googleapis.com/v1/courses?access_token=' + key);
+  componentDidMount() {
+    async function loadTest() {
+      try {
+        const response = await fetch('https://classroom.googleapis.com/v1/courses?access_token=' + key);
       const json = await response.json();
       console.log(json);
       var coursemax = 4;
@@ -76,11 +78,10 @@ class Homework {
     } catch (err) {
       console.log(err);
     }
+    }
+    loadTest();
   }
-}
 
-var app = new Homework();
-app.loadTest();
 
 const LoginPage = () =>
   <MuiThemeProvider theme={theme}>
@@ -133,5 +134,5 @@ const LoginPage = () =>
       </Paper>
     </div>
   </MuiThemeProvider>
-
 export default LoginPage
+
