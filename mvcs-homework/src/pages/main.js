@@ -10,34 +10,28 @@ console.log(key);
 class Homework {
   async loadTest() {
     try {
+      //grab courses
       const response = await fetch('https://classroom.googleapis.com/v1/courses?access_token=' + key);
       const json = await response.json();
-      console.log(json);
+      //coursemax will eventually be user defined
       var coursemax = 4;
-      var ctext= [coursemax*8];
-      var ctext2 = [coursemax*8];
-      var counter1, counter2 = 0;
-      var coursework, coursejson;
-      var courses = [];
-      for (counter1 in json.courses){
-        coursework = await fetch('https://classroom.googleapis.com/v1/courses/' +json.courses[counter1].id+'/courseWork?access_token='+key);
-        coursejson = await coursework.json();
-        courses[counter1]=coursejson;
-      }
-      console.log(courses);
-      counter1 = 0;
-
-      for(counter2 in courses){
-        ctext[counter2] ="";
-        for(counter1 in courses[counter2].courseWork){
-          if (counter1<=coursemax){
-            ctext[counter2] += "<p>"+courses[counter2].courseWork[counter1].title+"</p>";
+      //grabbing the name and assinments of each course
+      for(var course =0;course<json.courses.length;course++ ){
+        //grab course info
+        var coursework = await fetch('https://classroom.googleapis.com/v1/courses/' +json.courses[course].id+'/courseWork?access_token='+key);
+        var coursejson = await coursework.json();
+        //var with all the assignment names for this class
+        var assignment ="";
+        //grabbing all the assinments
+        for(var assignmentnum in coursejson.courseWork){
+          if (assignmentnum<=coursemax){
+            //add in assignment
+            assignment += "<p>"+coursejson.courseWork[assignmentnum].title+"</p>";
           }
         }
-        document.getElementById('rootname'+counter2).innerHTML = json.courses[counter2].name+'</b>'+':'+'<br/>';;
-      }
-      for(counter2 in ctext){
-        document.getElementById('root'+counter2).innerHTML = ctext[counter2];
+        //puts courses and assinments into ids to render
+        document.getElementById('root'+course).innerHTML = assignment;
+        document.getElementById('rootname'+course).innerHTML = json.courses[course].name+'</b>'+':'+'<br/>';;
       }
     } catch(err) {
       console.log(err);
