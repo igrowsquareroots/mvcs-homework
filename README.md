@@ -4,21 +4,37 @@ It was written by a team of MVHS students, who worked hard to bring you the Home
 
 Made by:
 
-John H. Park
+John H. Park: TEAM LEAD
 
-Andrew Runke
+Andrew Runke: GOOGLE CLASSROOM INTEGRATION
 
-Akhand Dugar
+Akhand Dugar: MATERIAL UI
 
-Alexander Vilablance 
+Ron Arel: FIREBASE(IN PROGRESS)
+
+Alexander Vilablance: GOOGLE CLASSROOM SET UP
 
 Christopher W. Harjadi
 
 Commands to install nessesary programs:
+
+
+
+WINDOWS/MAC:
+
+npm install gatsby
+
+npm install --save material-ui@next
+
+npm install --save material-ui-icons
+
+
+
+
+LINUX:
 
 sudo npm install gatsby
 
 sudo npm install --save material-ui@next
 
 sudo npm install --save material-ui-icons
-
