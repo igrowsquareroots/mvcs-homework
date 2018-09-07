@@ -1,6 +1,6 @@
-This is the MVHS Homework Helper, which organizes your Google Classroom data into one page.
+This is the MVHS Homework Helper, which organizes your Google Classroom data into one page. No more switching between Google Classroom pages.
 
-It was written by a team of MVHS students, who worked hard to bring you the Homework Helper.
+This stunning program was written by a team of MVHS (Mountain View High School) students, who worked hard to bring you the Homework Helper.
 
 Made by:
 
@@ -15,6 +15,8 @@ Alexander Vilablance
 Christopher W. Harjadi
 
 Ron Arel
+
+Johan Vonk
 
 Commands to install nessesary programs:
 
